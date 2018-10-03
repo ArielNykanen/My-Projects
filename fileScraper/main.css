@@ -1,0 +1,155 @@
+#intro {
+  user-select: none;
+  transition: 1.2s;
+  text-align: center;
+  color: white;
+  min-height: 0px;
+  min-width: 50%;
+  z-index: 4;
+  position: absolute;
+  top: -400px;
+  left: 25%;
+  background-color: rgba(0, 0, 0, 0.931);
+  border-radius: 10px;
+}
+#intro button {
+  margin: 2%;
+  padding: 5px 30px 5px 30px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+#intro button:hover {
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin: 2%;
+  padding: 5px 30px 5px 30px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+#intro button:active {
+  cursor: pointer;
+  transition: 50ms;
+  margin: 2%;
+  padding: 5px 30px 5px 30px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: white;
+  border-radius: 5px;
+}
+body {
+  background-color: #797979;
+  text-align: center;
+}
+body header {
+  min-height: 60px;
+  color: white;
+  background-color: black;
+}
+body header #title {
+  letter-spacing: 10px;
+  margin: 0px auto !important;
+}
+body header #switchMod {
+  transition: 1s;
+  min-width: 150px;
+  margin-left: 70%;
+  color: white;
+  border-radius: 10px;
+  padding: 1px;
+  background-color: #000000;
+}
+body header #switchMod:hover {
+  transition: 1s;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 70%;
+  min-width: 150px;
+  color: white;
+  border-radius: 10px;
+  padding: 1px;
+  background-color: rgba(209, 209, 209, 0.267);
+}
+body main {
+  background-color: white;
+}
+body main #upload {
+  max-width: 350px;
+  font-weight: bold;
+  margin: 2%;
+  color: white;
+  border-radius: 10px;
+  padding: 2px;
+  font-size: 20px;
+  background-color: #000000;
+}
+body main #switchMod {
+  max-width: 300px;
+  font-weight: bold;
+  margin: 2%;
+  color: white;
+  border-radius: 10px;
+  padding: 2px;
+  font-size: 20px;
+  background-color: #000000;
+}
+body main #keyInput {
+  height: 110px;
+  padding: 1%;
+  margin: 0px auto;
+  color: white;
+  background-color: #585858;
+  box-shadow: 0px 6px 8px black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+body main #keyInput lable {
+  margin: 0px;
+  padding: 0px;
+}
+body main #keyWord {
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  width: 444px;
+  margin: 3%;
+  outline: none;
+}
+body main #keyWord:focus {
+  color: #00ff00;
+  background-color: black;
+}
+body main #search {
+  transition: 1s;
+  color: #4d4d4d;
+  background-color: #000000;
+  margin: 10px;
+  padding: 10px 23px 10px 23px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+body main #search:hover {
+  transition: 1s;
+  color: white;
+  background-color: black;
+  margin: 10px;
+  padding: 10px 23px 10px 23px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+body footer {
+  color: white;
+  background-color: black;
+}
+#results {
+  max-height: 400px;
+  overflow-y: scroll;
+}
