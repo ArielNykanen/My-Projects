@@ -16,7 +16,6 @@ require_once('Templates/adminsNav.php');
 
 <?php require_once("languages/languages.php") ?>
 <?php
-#check if needed
 $admin = new Admin('','','');
 $url = new Query_check();
 ($admin->checkIfLoggedIn()) ? true:$url->exitApp();

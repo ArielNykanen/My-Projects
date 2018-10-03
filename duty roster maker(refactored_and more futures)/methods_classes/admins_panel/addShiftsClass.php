@@ -30,7 +30,6 @@ class NewShifts extends DataBaseCommands{
             </option>
             ";
             $this->shiftType++;
-            //need to get the static value from shifts inside the shifts table
             $this->uploadNewShift($this->shift, $shiftType, $this->daysOfWork);
             return $result;
 
@@ -101,21 +100,9 @@ class NewShifts extends DataBaseCommands{
             } 
            
             return $resultsArr;
-            // return "<option>Ariel You Are The Best And Say Thanks To God</option>";
         
         }
-        // public function createShiftOptions($options){
-    
-        //     $result = '';
-        //     foreach ($options as $key => $value) {
-        //         $result .= "
-        //             <option value=\"$key\">" . $value['shift_name'] . "</option>
-        //         ";
-        //     }
-            
-        //     return $result;
-    
-        // }
+
 
 
 }
@@ -378,7 +365,6 @@ class Submitions extends Shifts {
 
     public function updateUserSubStatus(){
 
-        // $total = [];
         $query = "UPDATE `users` SET `submited`= 'false'";
         $this->dbConnect()->query($query);
         $this->refreshPage();

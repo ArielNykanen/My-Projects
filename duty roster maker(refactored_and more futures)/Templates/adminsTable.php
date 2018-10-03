@@ -18,8 +18,6 @@ $dataBase = new DataBaseCommands('','','');
 
     <?php echo $adminsThead;
 
-    // $shifts = new Shifts('both', 7);
-    // echo $shifts->getSelectBar();
     ?>
         <?php
         $allUsers = $dataBase->getAllUsers();

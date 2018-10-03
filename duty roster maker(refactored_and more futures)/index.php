@@ -45,9 +45,6 @@ $url = new Query_check();
 if($_SERVER['QUERY_STRING'] === "action=request"){
     
 }
-//checking for permission to navigate to index.php
-
-// checkIfLoggedIn();
 
 ?>
 
@@ -74,13 +71,11 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
         
         
         <?php
-        #region ----this needs to go to the admins panel 
         
         $shifts = new Shifts('both', 7);
         $newShift = new NewShifts("Example", "1,1,1,1,1,0,0");
         $newShift->buildShift();
         
-        #endregion ----this needs to go to the admins panel
         ?>
 
     <tr>
@@ -90,8 +85,6 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
         <?php echo $shifts->buildAllShiftsTrRows(); ?>
     </tr>
 
-        <!-- // echo $td->execute();
-        // echo makeTableTdLang(2); //integer for how many td's dont forget to let the admin to chose -->
 
         
 
@@ -109,7 +102,6 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
     <?php    
     
 
-    //I MADE THE TH TD TO BE FLEXIBALE FOR FUTURE NOW YOU NEED TO MAKE THE TABLE AND MAKE NEW OBJECTS FROM TH TD IN ANY LANGUAGE YOU WANT IN MATTER OF SECOUNDS!!!! WHOOO HOOO!!
 
 
     if(isset($_POST['submitD'])){

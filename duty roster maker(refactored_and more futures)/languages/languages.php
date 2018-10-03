@@ -388,7 +388,6 @@ class AdminsNav extends NavLang {
 }
 
 
-#region ----App's workers panel language creation 
 
 class Languages {
 

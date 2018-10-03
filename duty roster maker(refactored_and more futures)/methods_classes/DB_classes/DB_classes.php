@@ -172,7 +172,6 @@ class DataBaseCommands extends dbConnect {
 
     public function upload($query){
 
-        // echo "<h1 style='color:red;'>$this->email</h1>";
         $this->dbConnect()->query($query);
         $query = "UPDATE `users` SET `submited`= 'true' WHERE `Email` = \"$this->email\"";
         $this->dbConnect()->query($query);
@@ -228,7 +227,6 @@ class DataBaseCommands extends dbConnect {
 
             $query = "SELECT `FullName`  FROM `users` WHERE submited = \"false\"";
             $result = $this->dbConnect()->query($query);
-            // $result = $result->fetch_assoc();
             
             while($res = $result->fetch_assoc()){
 

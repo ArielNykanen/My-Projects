@@ -21,7 +21,7 @@ require_once('Templates/adminsNav.php');
 <?php require_once("Templates/adminsTable.php") ?>
 <?php require_once("languages/languages.php") ?>
 <?php 
-#check if needed
+
 
 $logged = new Admin('', '', '');
 $url = new Query_check();
@@ -31,7 +31,6 @@ $submitions = new Submitions('','','','');
 $dataBase = new DataBaseCommands('','','');
 $getInfo = new AdminInfo('','');
 
-// $newDbConnect->getConn();
 ?>
 <div id='adminAlerts'>
     <h2 >Worker Status</h2>

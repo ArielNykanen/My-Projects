@@ -99,7 +99,6 @@ class AdminInfo extends DbConnect {
 
     public function setDayType(){
 
-        // echo $this->minimumNeededSelection[0];
         $query = "UPDATE `minimumwork` SET `minimumDay`= $this->minimumNeededSelection ,`daytype`= $this->neededWorkDayType WHERE id = 1;";
         $result = $this->dbConnect()->query($query);
         
@@ -139,7 +138,7 @@ class AdminInfo extends DbConnect {
 
     public function getWorkDays(){
 
-        # code...
+       
 
     }
 
@@ -147,7 +146,6 @@ class AdminInfo extends DbConnect {
 
     public function __destruct(){
         
-        // echo "<h5 style='color:white;'>End Of Admins Class</h1>";
 
     }
     
