@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+
+
 #errorAlert{
     
     color: white;
@@ -20,7 +22,7 @@ header{
 
 }
 
-#loggedInAs{
+.smallBox{
 
     overflow: hidden;
     max-width: 10%;
@@ -36,6 +38,26 @@ header{
     top:0px;
     left:0px;
 
+}
+
+
+
+.smallCollapseBox{
+    user-select: none;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.900);
+    box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.500);
+    color:white;
+    position:absolute;
+    top: 55%;
+    left: 100%;
+
+}
+
+#requirementsMenu{
+    width: 100%;
+    top: 54%;
+    left: 0%;
 }
 
 #navBar{
@@ -286,7 +308,7 @@ body{
         box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
         position: absolute;
         right: 30px;
-        top: 45%;
+        top: 50%;
         border-radius: 5px;
         border: 2px solid white;
         min-height: 140px;
@@ -473,12 +495,9 @@ body{
         top:0px;
         right: 30%;
         option{
-                    
         cursor: pointer;
         font-weight: bold;
         letter-spacing: 2px;
-
-        
     }
         #langChange{
             cursor: pointer;
@@ -608,7 +627,8 @@ body{
                 .sellectPre{
                     height: 40px;
                     width: 100%;
-                    }
+                }
+                
             }
 }
 }
@@ -634,21 +654,21 @@ footer{
 
 
     @media screen and (max-width: 1400px){
-        #loggedInAs{
+        .smallBox{
             font-size: 15px;
     
         }
     
     }
     @media screen and (max-width: 1227px){
-        #loggedInAs{
+        .smallBox{
             font-size: 10px;
     
         }
     
     }
     @media screen and (max-width: 768px){
-        #loggedInAs{
+        .smallBox{
             min-width: 20%;
             position:absolute;
             top:5%;
@@ -657,7 +677,7 @@ footer{
     
     }
     @media screen and (max-width: 426px){
-        #loggedInAs{
+        .smallBox{
             min-width: 30%;
             position:absolute;
             top:5%;
@@ -665,9 +685,10 @@ footer{
         }
     }
     @media screen and (max-width: 360px){
-        #loggedInAs{
+        .smallBox{
             display: none;
         }
     }
 
+    
     

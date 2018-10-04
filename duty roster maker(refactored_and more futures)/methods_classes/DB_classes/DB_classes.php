@@ -75,6 +75,16 @@ class DataBaseCommands extends dbConnect {
 
     }
 
+    public function getShiftName(){
+    
+        $query = "SELECT `shift_name` FROM `shifts` WHERE `shift_type` = '$this->neededWorkDayType';";
+        $result = $this->dbConnect()->query($query);
+        $result = $result->fetch_assoc();
+        $result = implode($result);
+        return $result;
+
+    }
+
     public function uploadNewShift($shift, $shiftType, $daysOfWork){
 
         $query = "INSERT INTO `shifts`(`shift_name`, `shift_type`, `days_of_work`) VALUES (\"$shift\",\"$shiftType\",\"$daysOfWork\")";
@@ -102,19 +112,20 @@ class DataBaseCommands extends dbConnect {
     }
 
 
-    public function execute(){
-
+    public function validateSelections(){
         $this->getUserName();
         $this->prepareFile();
         $this->realEscape();
         if($this->checkRequireMents()){
-
+            
+           
             if($this->checkIfSubmited()){
                 $query = "INSERT INTO submitions(worker_name,Email,submition) VALUES('$this->userName','$this->email' ,'$this->file');";
                 $this->upload($query);
-                    return;
+                    return true;
             }else{
                 $this->updateUploaded();
+                return true;
             }
 
         }else{
@@ -153,13 +164,16 @@ class DataBaseCommands extends dbConnect {
         return false;
     }
 
+    
+
+
 
     public function checkIfSubmited(){
-
+        
         $query = "SELECT  `Email`, `Submition` FROM `submitions` WHERE Email = \"$this->email\"";
         $result = $this->dbConnect()->query($query);
         $result = $result->fetch_array();
-
+        
         if(is_array($result)){
 
             return false;
@@ -241,15 +255,6 @@ class DataBaseCommands extends dbConnect {
 }
 
 
-class CheckIfSubmited extends DataBaseCommands {
-
-    public function __construct($email) {
-        $this->email = $email;
-    }
-
-}
-
-
 class GetCurrenUser extends DataBaseCommands {
 
     protected $userName;
@@ -294,10 +299,21 @@ class GetCurrenUser extends DataBaseCommands {
         
     }
 
+    public function getShiftNameByDefaultValue($value){
+    
+        $query = "SELECT `shift_name` FROM `shifts` WHERE `shift_type` = '$value';";
+        $result = $this->dbConnect()->query($query);
+        $result = $result->fetch_assoc();
+        if($result && is_array($result)){
+            $result = implode($result);
+            return $result;
+        }
+        
+    }
+
     public function printUsersSub($usersSub){
 
         if(!empty($usersSub)){
-
                 $usersSub = preg_split('/,/', $usersSub);
                 echo"
                 <h4'>" . $GLOBALS['submitedTable']->__get("submitedHeader") . "</h4>
@@ -306,14 +322,9 @@ class GetCurrenUser extends DataBaseCommands {
                 $GLOBALS['Thead'].
                 "</thead>";
                 foreach ($usersSub as $key => $value) {
-                        if($value === '0' )
-                        echo "<td  style='background-color:rgba(222,100,22,0.5);'>" . $GLOBALS['td']->__get("freeDay") ."</td>";
-                        if($value === '1' )
-                        echo "<td style='background-color:rgba(222,180,22,0.5);'>" . $GLOBALS['td']->__get("morning") ."</td>";
-                        if($value === '2' )
-                        echo "<td style='background-color:rgba(222,180,22,0.5);'>" . $GLOBALS['td']->__get("eavning") ."</td>";
-                        if($value === '3' )
-                        echo "<td style='background-color:rgba(222,180,22,0.5);'>" . $GLOBALS['td']->__get("both") ."</td>";
+                    
+                    $shift = $this->getShiftNameByDefaultValue($value);
+                    echo "<td>$shift</td>";
                     
                 }
 

@@ -8,9 +8,9 @@
     require_once('methods_classes/DB_classes/DB_classes.php'); 
     require_once('methods_classes/admins_panel/classes.php'); 
     require_once('methods_classes/admins_panel/addShiftsClass.php'); 
-
     require_once("languages/languages.php");
     $languages->getLanguage();
+    $adminsInfo = new AdminInfo('','');
     
 ?>
 
@@ -43,7 +43,7 @@ $url = new Query_check();
 <?php
 
 if($_SERVER['QUERY_STRING'] === "action=request"){
-    
+    #>>>
 }
 
 ?>
@@ -51,7 +51,7 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
 <?php require_once('Templates/navBar.php'); ?> 
 
 <div class="row">
-<h4 id='loggedInAs'>
+<h4 class='smallBox' >
 <?php 
     echo $loggedInMessage->execute();
     echo $DB_getCurrent_user->execute();
@@ -66,16 +66,25 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
 <?php require_once("Templates/langSelector.php"); ?>
 
 <form id='sendRef' method="POST">
+    <div class='smallCollapseBox rounded-bottom border '>    
+    <button type="button" class='m-0 px-lg-5 ' id='settingCollapser' data-target="#requirementsMenu" data-toggle="collapse">Requirements</button>
+    </div>
+    <div id='requirementsMenu' class='smallCollapseBox rounded-bottom border  collapse'>
+    <p >
+        Shift: <?php echo $adminsInfo->getDayType()?>
+    </p>
+    <p >
+        Minimum Of Days To Select: <?php echo $adminsInfo->getDayMinimum()?>
+    </p>
+    </div>
     
     <table>
         
         
         <?php
-        
-        $shifts = new Shifts('both', 7);
-        $newShift = new NewShifts("Example", "1,1,1,1,1,0,0");
-        $newShift->buildShift();
-        
+
+       
+
         ?>
 
     <tr>
@@ -85,6 +94,7 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
         <?php echo $shifts->buildAllShiftsTrRows(); ?>
     </tr>
 
+        
 
         
 
@@ -102,14 +112,17 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
     <?php    
     
 
+   
 
 
     if(isset($_POST['submitD'])){
         $uploadSubmition = new DataBaseCommands( $_SESSION['fullName'],  $_POST['selectPre'],"");
-        if($uploadSubmition->execute()){
+        if($uploadSubmition->validateSelections()){
             $submitionSuccessMessage->execute();
+            
         }else{
-            minRequireError();
+            
+            echo $minimumNotReached;
         }
         
     }
@@ -119,9 +132,12 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
 
 if(isset($_POST['uploadD'])){
 
-    $uploadSubmition = new DataBaseCommands($_SESSION['fullName'],  $_POST['sellectPre'],"");
-    if($uploadSubmition->execute()){
+    $uploadSubmition = new DataBaseCommands($_SESSION['fullName'],  $_POST['selectPre'],"");
+    if($uploadSubmition->validateSelections()){
         $submitionSuccessMessage->execute();
+    }else{
+            
+        echo $minimumErrNotUpdated;
     }
 
 }

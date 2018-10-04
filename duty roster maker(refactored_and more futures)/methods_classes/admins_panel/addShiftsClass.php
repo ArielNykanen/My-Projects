@@ -59,6 +59,12 @@ class NewShifts extends DataBaseCommands{
                         </option>
                         ";
                         
+                    }elseif($daysOfWork[$j] === '0'){
+                        ${"day$j"}[0] = "
+                        <option value=\"0\">
+                        ----
+                        </option>
+                        ";
                     }
 
                 }
@@ -98,12 +104,11 @@ class NewShifts extends DataBaseCommands{
             while ($res = $result->fetch_assoc()) {
                     $resultsArr[] = $res;
             } 
-           
+        
             return $resultsArr;
         
-        }
-
-
+        
+    }
 
 }
 

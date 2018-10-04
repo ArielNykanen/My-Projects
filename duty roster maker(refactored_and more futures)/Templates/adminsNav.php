@@ -5,6 +5,7 @@
     require_once('methods_classes/DB_methods/DB_methods.php');  
 
 
+
     ?>
 
 <nav id='AnavBar'>

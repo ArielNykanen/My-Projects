@@ -58,10 +58,6 @@ public function __toString(){
 }
 
 
-//here you need to connect the lang aswell
-// $enMessage = new SubmitionMessage("Submitted!!", "Work arrangement was successfully submitted");
-// $heMessage = new SubmitionMessage("נשלח!!", "הסידור עבודה הוגש בהצלחה");
-// $finMessage = new SubmitionMessage("toimitettu!!", "Työskentely järjestettiin onnistuneesti");
 
 
 
@@ -197,10 +193,6 @@ public function __toString(){
 <br>
 <strong>$this->errMessage</strong>
 </div>";
-    
-    
-    // "<strong class=\"errorMessages\">$this->errMessage</strong>";
-
 }
 
 
@@ -388,6 +380,7 @@ class AdminsNav extends NavLang {
 }
 
 
+#region ----App's workers panel language creation 
 
 class Languages {
 
@@ -439,6 +432,9 @@ class Languages {
     }
 
 
+    
+
+
     function getLanguage(){
         foreach ($this->languages as $key => $value) {
 
@@ -456,6 +452,8 @@ class Languages {
         
         function English(){
             
+            $GLOBALS['minimumErrNotUpdated'] = new DisplayError("Not updated!","You didnt reached minimum requirements, for other options contact your manager.");
+            $GLOBALS['minimumNotReached'] = new DisplayError("error!","You didnt reached minimum requirements, for other options contact your manager.");
             $GLOBALS['adminsThead'] = new AdminsThead("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Shift"); 
             $GLOBALS['yourRequestMessage'] = new DisplayingText("your request is on hold.","");
             $GLOBALS['mainWorkerPanelHeader'] = new DisplayingText("Duty Roster","");
@@ -481,6 +479,8 @@ class Languages {
         
         function Hebrew(){
             
+            $GLOBALS['minimumErrNotUpdated'] = new DisplayError("לא התעדכן","לא בחרת במינימום משמרות לשבוע, לאפשרויות אחרות אנא פנה למנהל שלך.");
+            $GLOBALS['minimumNotReached'] = new DisplayError("תקלה בשליחה","לא בחרת במינימום משמרות לשבוע, לאפשרויות אחרות אנא פנה למנהל שלך.");
             $GLOBALS['adminsThead'] = new AdminsThead("ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת", "משמרת"); 
             $GLOBALS['yourRequestMessage'] = new DisplayingText(".הבקשה שלך בהמתנה","");
             $GLOBALS['mainWorkerPanelHeader'] = new DisplayingText("סידור עבודה","");
@@ -528,9 +528,26 @@ class Languages {
             #endregion ----adminsPanelLang
             // $GLOBALS[''] = new ("");
         
-    }
+        }
+        
 
+        function TestLanguage(){
+            
+            $GLOBALS['extraInfo'] = new DisplayingText("Test language added", "");
+            $GLOBALS['defaultMessage'] = new DisplayingText("Test language added", "");
+            $GLOBALS['navLang'] = new NavLang("Test language added", "Test language added");
+            $GLOBALS['requestTab'] = new RequestTab("Test language added", "Test language added", "Test language added", "Test language added", "Test language added", "Test language added");
+            $GLOBALS['Thead'] = new Create_th("Test language added", "Test language added", "Test language added", "Test language added", "Test language added", "Test language added", "Test language added"); 
+            $GLOBALS['loggedInMessage'] = new LogedInMessage("Test language added");
+            $GLOBALS['submitedTable'] = new UsersSubmitionOnHoldHeaderMessage("Test language added");
+            $GLOBALS['Submit'] = new Submit("Test language added");
+            // $GLOBALS[''] = new ("");
+        
+        }
 
+        
+
+        
 }
 
 

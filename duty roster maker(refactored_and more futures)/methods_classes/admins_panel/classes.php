@@ -99,21 +99,46 @@ class AdminInfo extends DbConnect {
 
     public function setDayType(){
 
-        $query = "UPDATE `minimumwork` SET `minimumDay`= $this->minimumNeededSelection ,`daytype`= $this->neededWorkDayType WHERE id = 1;";
+        $shiftName = $this->getShitftName();
+        $query = "UPDATE `minimumwork` SET `minimumDay`= '$this->minimumNeededSelection' ,`daytype`= '$this->neededWorkDayType' , `shift_name` = '$shiftName' WHERE id = 1";
         $result = $this->dbConnect()->query($query);
         
+        
+    }
+
+
+    public function getShitftName(){
+    
+        $query = "SELECT `shift_name` FROM `shifts` WHERE `shift_type` = '$this->neededWorkDayType';";
+        $result = $this->dbConnect()->query($query);
+        $result = $result->fetch_assoc();
+        $result = implode($result);
+        return $result;
 
     }
 
 
     public function getDayType(){
 
-        $query = "SELECT `daytype` FROM `minimumwork`;";
+        $query = "SELECT `shift_name` FROM `minimumwork`;";
         $result = $this->dbConnect()->query($query);
         $result = $result->fetch_assoc();
         $result = implode($result);
         return $result;
 
+    }
+
+    public function getAllShifts(){
+
+        $res = '';
+        $allShifts = '';
+        $query = "SELECT `shift_name`, `shift_type` FROM `shifts`";
+        $result = $this->dbConnect()->query($query);
+        while ($res = $result->fetch_assoc()) {
+            $allShifts .= "<option value=\"" . $res['shift_type'] . "\">" .  $res['shift_name'] . "</option>";
+        }
+        echo $allShifts;
+        
     }
 
 
@@ -135,17 +160,11 @@ class AdminInfo extends DbConnect {
 
     }
 
-
-    public function getWorkDays(){
-
-       
-
-    }
-
     
 
     public function __destruct(){
         
+
 
     }
     

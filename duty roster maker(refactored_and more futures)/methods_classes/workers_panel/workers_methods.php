@@ -57,34 +57,7 @@ function getDayType($workSelect, $number2){
 }
 
 
-function minRequireError($minimumWork, $dayType){
 
-    if($_SERVER['QUERY_STRING'] === 'langSelection=1'){
-
-        return"
-        You need to chose at least $minimumWork $dayType, <br>
-        For other options please contact your manager.<br>";
-
-    }elseif($_SERVER['QUERY_STRING'] === 'langSelection=2'){
-
-        return"
-        , את\ה חייב לבחור לפחות $minimumWork $dayType<br>
-        .לאפשרויות אחרות אנא פנה להנהלה.";
-
-    }elseif($_SERVER['QUERY_STRING'] === 'langSelection=3'){
-
-        return"
-        Sinun täytyy valita ainakin $minimumWork $dayType, <br>
-        Muista vaihtoehdoista ota yhteyttä johtajaan.";
-
-    }else{
-
-        return"
-        You need to chose at least $minimumWork $dayType, <br>
-        For other options please contact your manager.<br>";
-
-    }
-}
 
 
 function checkRequiredWork($selection, $minimumWorkType, $minimumWork){

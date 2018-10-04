@@ -21,6 +21,14 @@ require_once('Templates/adminsNav.php');
 <?php require_once("Templates/adminsTable.php") ?>
 <?php require_once("languages/languages.php") ?>
 <?php 
+#region ---- On Progress...
+
+$shifts = new Shifts('both', 7);
+$newShift = new NewShifts("Example", "1,1,1,1,1,0,0");
+$newShift->buildShift();
+
+#endregion ---- On Progress...
+
 
 
 $logged = new Admin('', '', '');
@@ -30,6 +38,7 @@ $submitions = new Submitions('','','','');
 
 $dataBase = new DataBaseCommands('','','');
 $getInfo = new AdminInfo('','');
+
 
 ?>
 <div id='adminAlerts'>
@@ -69,9 +78,8 @@ $getInfo = new AdminInfo('','');
                 <div class="col-md-12">
                     <label for="dayType">Set required shift</label>
                     <select name="dayType" id="selection">
-                        <option value="1">Morning</option>
-                        <option value="2">Eavning</option>
-                        <option value="3">Both</option>
+                        <!-- returns all shifts as <option> tags -->
+                        <?php $getInfo->getAllShifts(); ?>
                     </select>
                 </div>
             <div class="col-md-12">
@@ -88,7 +96,6 @@ $getInfo = new AdminInfo('','');
             <div class="col-md-12">
             <?php 
                 if(isset($_GET['sendWorkRequ'])){
-
                     $minimumDays = $_GET['minimumSelect'];
                     $dayType = $_GET['dayType'];
                     $setRequirements = new AdminInfo($minimumDays,$dayType);
@@ -99,8 +106,8 @@ $getInfo = new AdminInfo('','');
             ?>
             
                 <h5>Current</h5>
-                <p>type: <?php echo $getInfo->getDayType(); ?></p>
-                <p>minimum: <?php echo $getInfo->getDayMinimum(); ?></p>
+                <p>Shift: <?php echo $getInfo->getDayType(); ?></p>
+                <p>Minimum: <?php echo $getInfo->getDayMinimum(); ?></p>
 
             </div>
         </div>

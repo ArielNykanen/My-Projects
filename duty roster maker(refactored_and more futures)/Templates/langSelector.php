@@ -1,4 +1,5 @@
-<div id="langChangeDiv">
+<div id="langChangeDiv"> 
+    
 <form method="GET">
         <div>
             <select id='langChange' name="langSelection" onchange="this.form.submit()">
