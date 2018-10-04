@@ -193,6 +193,7 @@ public function __toString(){
 <br>
 <strong>$this->errMessage</strong>
 </div>";
+
 }
 
 
@@ -273,8 +274,9 @@ class Create_th {
 class AdminsThead extends Create_th{
 
     protected $dayType;
+    protected $edit;
 
-    public function __construct($day1, $day2, $day3, $day4, $day5, $day6, $day7, $dayType) {
+    public function __construct($day1, $day2, $day3, $day4, $day5, $day6, $day7, $dayType, $edit) {
         
         $this->day1 = $day1;
         $this->day2 = $day2;
@@ -284,6 +286,7 @@ class AdminsThead extends Create_th{
         $this->day6 = $day6;
         $this->day7 = $day7;
         $this->dayType = $dayType;
+        $this->edit = $edit;
 
     }
 
@@ -303,6 +306,9 @@ class AdminsThead extends Create_th{
         return"
         <div class=\"container\">
         <thead>
+        <th>
+        $this->edit
+        </th>
         <th>
         $this->dayType
         </th>
@@ -454,7 +460,7 @@ class Languages {
             
             $GLOBALS['minimumErrNotUpdated'] = new DisplayError("Not updated!","You didnt reached minimum requirements, for other options contact your manager.");
             $GLOBALS['minimumNotReached'] = new DisplayError("error!","You didnt reached minimum requirements, for other options contact your manager.");
-            $GLOBALS['adminsThead'] = new AdminsThead("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Shift"); 
+            $GLOBALS['adminsThead'] = new AdminsThead("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Shift", "Edit"); 
             $GLOBALS['yourRequestMessage'] = new DisplayingText("your request is on hold.","");
             $GLOBALS['mainWorkerPanelHeader'] = new DisplayingText("Duty Roster","");
             $GLOBALS['submitionSuccessMessage'] = new SubmitionMessage("Submited!","Your work order has been submitted successfully");

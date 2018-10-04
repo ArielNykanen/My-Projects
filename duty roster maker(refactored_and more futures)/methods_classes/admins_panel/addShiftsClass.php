@@ -53,6 +53,7 @@ class NewShifts extends DataBaseCommands{
                 for ($j=0; $j < $weekDays; $j++) { 
                     
                     if($daysOfWork[$j] === '1'){
+                        
                         ${"day$j"}[] = "
                         <option value=\"" . $savedShifts[$i]['shift_type'] . "\">
                         " . $savedShifts[$i]['shift_name'] . "
@@ -60,7 +61,7 @@ class NewShifts extends DataBaseCommands{
                         ";
                         
                     }elseif($daysOfWork[$j] === '0'){
-                        ${"day$j"}[0] = "
+                        ${"day$j"}[] = "
                         <option value=\"0\">
                         ----
                         </option>
@@ -69,7 +70,6 @@ class NewShifts extends DataBaseCommands{
 
                 }
             }
-            
             $this->printSelectionTable($day0, $day1, $day2, $day3, $day4, $day5, $day6);
             
 
@@ -104,9 +104,8 @@ class NewShifts extends DataBaseCommands{
             while ($res = $result->fetch_assoc()) {
                     $resultsArr[] = $res;
             } 
-        
+
             return $resultsArr;
-        
         
     }
 
@@ -223,6 +222,7 @@ class Submitions extends Shifts {
             $tempSub = $workers[$i]['Submition'];
             $tempSub = explode(",", $tempSub);
             for ($j=$day; $j <= $day; $j++) { 
+                
                 if($tempSub[$j] === $num){
                     $this->printWorker($workers[$i]['worker_name'], $tempSub[$j], $day); 
                     break;
@@ -236,25 +236,12 @@ class Submitions extends Shifts {
     }
     
     public function printWorker($worker, $workerSub, $day){
-        if($workerSub === '1'){
+        if($workerSub){
             $this->uploadToWorkersSubs($workerSub, $worker, $day);
             echo "
             <h6><span style='color:red;'>Delete</span><input name='selectedWorkersMorning" . $day ."[]' type=\"checkbox\" value='$worker' title=\"Check to delete worker from the list\"> $worker</h6>
             ";
         }
-        if($workerSub === '2'){
-            $this->uploadToWorkersSubs($workerSub, $worker, $day);
-            echo "
-            <h6><span style='color:red;'>Delete</span><input name='selectedWorkersEavning" . $day ."[]'type=\"checkbox\" value='$worker' title=\"Check to delete worker from the list\"> $worker</h6>
-            ";
-        }
-        if($workerSub === '3'){
-            $this->uploadToWorkersSubs($workerSub, $worker, $day);
-            echo "
-            <h6><span style='color:red;'>Delete</span><input name='selectedWorkersBoth" . $day ."[]'type=\"checkbox\" value='$worker' title=\"Check to delete worker from the list\"> $worker</h6>
-            ";
-        } 
-        
 
     }
 

@@ -355,16 +355,12 @@ body #workerRequestsTable textarea {
 #submitionTable td {
   transition: 0.5s;
   max-width: 123px;
-  min-width: 123px;
+  min-width: 110px;
   max-height: 100px;
   min-height: 100px;
 }
 #submitionTable td h6 {
   font-size: 15px;
-}
-#submitionTable td:hover {
-  transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 #adminsTableWraper {
   margin: 10%;
@@ -542,6 +538,26 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
   color: black;
   font-weight: bold;
+}
+.fa-plus-circle {
+  transition: 1s;
+  font-size: 40px;
+  color: #c2c2c2;
+}
+#addShiftTd button {
+  transition: 1s;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(36, 145, 240, 0);
+}
+#addShiftTd button:hover {
+  background-color: rgba(255, 255, 255, 0.205);
+  color: white;
+}
+#addShiftTd button:hover .fa-plus-circle {
+  color: white;
 }
 @media screen and (max-width: 1400px) {
   .smallBox {

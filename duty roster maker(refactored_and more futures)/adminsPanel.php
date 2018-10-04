@@ -21,13 +21,7 @@ require_once('Templates/adminsNav.php');
 <?php require_once("Templates/adminsTable.php") ?>
 <?php require_once("languages/languages.php") ?>
 <?php 
-#region ---- On Progress...
 
-$shifts = new Shifts('both', 7);
-$newShift = new NewShifts("Example", "1,1,1,1,1,0,0");
-$newShift->buildShift();
-
-#endregion ---- On Progress...
 
 
 

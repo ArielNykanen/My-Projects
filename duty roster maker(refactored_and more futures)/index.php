@@ -82,8 +82,14 @@ if($_SERVER['QUERY_STRING'] === "action=request"){
         
         
         <?php
-
-       
+        
+        #region ----this needs to go to the admins panel 
+        
+        $shifts = new Shifts('both', 7);
+        $newShift = new NewShifts("Example", "1,1,1,1,1,0,0");
+        $newShift->buildShift();
+        
+        #endregion ----this needs to go to the admins panel
 
         ?>
 
