@@ -1,0 +1,21 @@
+.appWrapper * button {
+  cursor: pointer;
+}
+.appWrapper h1 {
+  text-align: center;
+}
+.appWrapper .start {
+  color: green;
+  font-size: 20px;
+}
+.appWrapper .end {
+  color: red;
+  font-size: 20px;
+}
+.appWrapper .total {
+  font-size: 20px;
+  color: blue;
+}
+.appWrapper .running {
+  font-size: 40px;
+}

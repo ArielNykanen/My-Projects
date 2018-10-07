@@ -1,0 +1,598 @@
+* {
+  box-sizing: border-box;
+}
+* button {
+  cursor: pointer;
+}
+#errorAlert {
+  color: white;
+  border-radius: 20px;
+  background-color: rgba(253, 116, 116, 0.5);
+}
+header {
+  min-height: 100px;
+  opacity: 1;
+  color: white;
+  margin: 2%;
+  text-shadow: 10px 10px 10px black;
+}
+.smallBox {
+  overflow: hidden;
+  max-width: 10%;
+  user-select: none;
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 30px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.smallCollapseBox {
+  user-select: none;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  top: 55%;
+  left: 100%;
+}
+#requirementsMenu {
+  width: 100%;
+  top: 54%;
+  left: 0%;
+}
+#navBar ul a {
+  text-decoration: none;
+}
+#navBar ul a li {
+  min-width: 120px ;
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(0, 0, 0, 0.315);
+  color: #2f2f2f;
+  list-style-type: none;
+  display: inline-flex;
+  margin: 2%;
+  font-size: 25px;
+  font-weight: bold;
+}
+#navBar ul a li:hover {
+  padding-left: 5%;
+  padding-right: 5%;
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.8);
+  transition: 1s;
+  text-align: center;
+  border: 4px solid white;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(0, 0, 0, 0.753);
+  color: white;
+  list-style-type: none;
+  display: inline-flex;
+  margin: 2%;
+  font-size: 25px;
+  font-weight: bold;
+}
+#adminAlerts {
+  padding: 1%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid;
+  min-width: 300px;
+  max-width: 300px;
+  border-radius: 5px;
+}
+#adminAlerts button {
+  position: absolute;
+  bottom: 30px;
+  right: 5px;
+  border-radius: 5px;
+  transition: 1s;
+  border: none;
+}
+#adminAlerts button:hover {
+  transition: 1s;
+  background-color: #f72c2c;
+}
+#adminAlerts h2 {
+  border-bottom: 1px solid;
+  color: white;
+}
+#adminAlerts #submited {
+  border-bottom: 2px solid;
+  min-height: 200px;
+}
+#adminAlerts #submited h5 {
+  border-bottom: 1px solid;
+  max-width: 100px;
+}
+#adminAlerts #submited li {
+  color: #74ff74;
+}
+#adminAlerts #notsubmited {
+  border-bottom: 2px solid;
+  min-height: 200px;
+}
+#adminAlerts #notsubmited h5 {
+  border-bottom: 1px solid;
+  max-width: 130px;
+}
+#adminAlerts #notsubmited li {
+  color: red;
+}
+#managersMessage {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  color: #ffffff;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+}
+#sendmessage {
+  padding: 1%;
+  border: 2px solid white;
+  max-width: 300px;
+  position: absolute;
+  top: 500px;
+  left: 0px;
+  color: white;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#sendmessage h2 {
+  border-bottom: 2px solid;
+}
+#sendmessage h5 {
+  border-bottom: 2px solid;
+}
+#sendmessage textarea {
+  resize: none;
+}
+#sendmessage button {
+  margin: 2%;
+  color: white;
+  border-radius: 5px;
+}
+#AnavBar ul a {
+  text-decoration: none;
+}
+#AnavBar ul li {
+  padding: 5px;
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  margin: 10px;
+  text-align: center;
+  border: 4px solid #a3a3a3;
+  border-radius: 20px;
+  min-width: 100px;
+  color: #ffffff;
+  list-style-type: none;
+  display: inline-flex;
+  margin: 2%;
+  font-size: 25px;
+  font-weight: bold;
+}
+#AnavBar ul li:hover {
+  padding: 5px;
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.8);
+  transition: 1s;
+  margin: 10px;
+  text-align: center;
+  border: 4px solid white;
+  border-radius: 20px;
+  min-width: 100px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  list-style-type: none;
+  display: inline-flex;
+  margin: 2%;
+  font-size: 25px;
+  font-weight: bold;
+}
+#MPh1 {
+  font-size: 50px;
+  letter-spacing: 10px;
+  text-shadow: 10px 10px 15px rgba(0, 0, 0, 0.8);
+}
+#makeRwraper {
+  border-radius: 5px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  min-height: 600px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid;
+}
+#makeRwraper #Mtable {
+  color: white;
+}
+#makeRwraper #Mtable thead th {
+  font-weight: bold;
+  min-width: 100px;
+  padding: 10px;
+  border: 4px solid;
+}
+#makeRwraper #Mtable tbody td {
+  min-width: 100px;
+  padding: 3%;
+  border: 4px solid;
+}
+#makeRwraper #Mtable tbody #morningTD {
+  font-weight: bold;
+  padding: 3%;
+}
+#makeRwraper #Mtable tbody #eveningTD {
+  font-weight: bold;
+  padding: 3%;
+}
+#makeRwraper #Mtable tbody .saturday {
+  background-color: rgba(68, 68, 68, 0.493);
+}
+#makeRwraper h3 {
+  font-size: 35px;
+  border-bottom: 2px solid;
+}
+#makeRwraper form .row {
+  position: relative;
+  min-height: 500px;
+}
+#makeRwraper form button {
+  position: absolute;
+  right: 30px;
+  bottom: -60px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1% 4% 1% 4%;
+}
+#makeRwraper form button:hover {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1% 4% 1% 4%;
+}
+body {
+  background-image: url(images/register-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body #closeUpdatingWrapper {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  border-radius: 5px;
+  border: 2px solid white;
+  min-height: 140px;
+  width: 180px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1%;
+  color: white;
+}
+body #closeUpdatingWrapper h1 {
+  font-size: 19px;
+  border-bottom: 1px solid white;
+}
+body #closeUpdatingWrapper button {
+  padding: 10% 35% 10% 35%;
+}
+body #workerRequestsTable {
+  width: 1200px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+body #workerRequestsTable button {
+  padding: 2% 20% 2% 20%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+body #workerRequestsTable th {
+  text-align: center;
+  border: 2px solid white;
+}
+body #workerRequestsTable td {
+  padding: 1% 2% 1% 2%;
+  border: 2px solid white;
+}
+body #workerRequestsTable textarea {
+  resize: none;
+}
+#setDayTypeAndMinimum {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: 15px;
+  top: 5%;
+  border-radius: 5px;
+  border: 2px solid white;
+  min-height: 300px;
+  max-width: 180px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1%;
+  color: white;
+}
+#setDayTypeAndMinimum h5 {
+  border-bottom: 1px solid white;
+}
+#setDayTypeAndMinimum select {
+  margin: 2%;
+}
+#setDayTypeAndMinimum button {
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+#setDayTypeAndMinimum p {
+  border: 1px solid white;
+  max-width: 100px;
+}
+@media screen and (max-width: 1586px) {
+  #setDayTypeAndMinimum {
+    right: 8%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  #setDayTypeAndMinimum {
+    right: 4%;
+  }
+}
+#submitionTable td {
+  transition: 0.5s;
+  max-width: 123px;
+  min-width: 110px;
+  max-height: 100px;
+  min-height: 100px;
+}
+#submitionTable td h6 {
+  font-size: 15px;
+}
+#adminsTableWraper {
+  margin: 10%;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5%;
+  width: 100%;
+  border: 4px solid white;
+}
+#adminsTableWraper button:nth-child(3) {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  float: left;
+}
+#adminsTableWraper button:nth-child(4) {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  float: right;
+}
+#adminsTableWraper #adminsTable {
+  color: white;
+}
+#adminsTableWraper #adminsTable th {
+  text-align: center;
+  border: 2px solid white;
+}
+#adminsTableWraper #adminsTable td {
+  padding: 1% 2% 1% 2%;
+  border: 2px solid white;
+}
+#langChangeDiv {
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  position: fixed;
+  top: 0px;
+  right: 30%;
+}
+#langChangeDiv option {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+#langChangeDiv #langChange {
+  outline: none;
+  border: 1px solid white;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  position: fixed;
+  top: 10px;
+  right: 1%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#requestWraper {
+  transition: 2s;
+  border-radius: 20px;
+  color: white;
+  padding: 1%;
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: -500px;
+  border: 4px solid;
+  max-width: 400px;
+  min-height: 500px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#requestWraper .fa-chevron-circle-left {
+  transition: 0.4s;
+  float: right;
+  font-size: 25px;
+  color: #a3a3a3;
+}
+#requestWraper .fa-chevron-circle-left:hover {
+  transition: 0.4s;
+  color: #ffffff;
+  float: right;
+  font-size: 25px;
+}
+#requestWraper .fa-chevron-circle-left:active {
+  transition: 0.1s;
+  color: rgba(255, 255, 255, 0.288);
+  float: right;
+  font-size: 25px;
+}
+#requestWraper h4 {
+  margin-bottom: 10%;
+  text-decoration: underline;
+}
+#requestWraper select {
+  margin: 5%;
+}
+#requestWraper button {
+  margin: 5%;
+  padding: 2%;
+}
+#error {
+  opacity: 1;
+  max-width: 700px;
+}
+main #whiteOpaBg {
+  border-radius: 10px;
+  max-width: 800px;
+  max-height: 560px;
+  padding: 8%;
+  background-color: rgba(255, 255, 255, 0.318);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.267);
+}
+main #formWraper {
+  max-width: 350px;
+  min-height: 400px;
+  background-color: #ffffff;
+}
+main h1 {
+  color: white;
+}
+main #fieldset {
+  border-bottom: 2px solid;
+  min-height: 200px;
+}
+main #sendRef {
+  border-radius: 10px;
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  position: relative;
+  min-height: 500px;
+  max-width: 968px;
+  border: 4px solid white;
+}
+main #sendRef button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 25px 5px 25px;
+  font-weight: bold;
+}
+main #sendRef #acceptSubmition {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+main table {
+  width: 100%;
+  text-align: center;
+}
+main table thead th {
+  border: 1px solid white;
+  color: white;
+}
+main table tbody td .sellectPre {
+  height: 40px;
+  width: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 10px;
+}
+#copyRights {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+  font-weight: bold;
+}
+.fa-plus-circle {
+  transition: 1s;
+  font-size: 40px;
+  color: #c2c2c2;
+}
+#addShiftTd button {
+  transition: 1s;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(36, 145, 240, 0);
+}
+#addShiftTd button:hover {
+  background-color: rgba(255, 255, 255, 0.205);
+  color: white;
+}
+#addShiftTd button:hover .fa-plus-circle {
+  color: white;
+}
+#deleteShift {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+#deleteShift i {
+  transition: 1s;
+}
+#deleteShift i:hover {
+  transition: 1s;
+  color: red;
+}
+#newShiftEditor input {
+  max-width: 100px;
+}
+#newShiftEditor td {
+  color: white;
+}
+@media screen and (max-width: 1400px) {
+  .smallBox {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1227px) {
+  .smallBox {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .smallBox {
+    min-width: 20%;
+    position: absolute;
+    top: 5%;
+    left: 75%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .smallBox {
+    min-width: 30%;
+    position: absolute;
+    top: 5%;
+    left: 85%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .smallBox {
+    display: none;
+  }
+}
